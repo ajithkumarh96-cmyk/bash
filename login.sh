@@ -1,5 +1,8 @@
 #!/bin/bash
 
+MAX_ATTEMPTS=3
+for ATTEMPT in $(seq 1 $MAX_ATTEMPTS); 
+do
 read -p "Username :" username
 read -sp "Password :" password
 echo
@@ -18,3 +21,6 @@ then
 else
     echo "Login Failed"
 fi
+done
+
+echo "Maximum login attempts reached. Access denied."
